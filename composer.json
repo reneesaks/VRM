@@ -2,6 +2,6 @@
     "require": {
         "silex/silex": "~2.0",
         "twig/twig": "^2.4",
-        "doctrine/dbal": "^2.5"
+        "doctrine/dbal": "~2.2"
     }
 }
