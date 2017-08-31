@@ -3,6 +3,7 @@
 namespace BookingApp;
 
 use BookingApp\Controllers\CreateBookingController;
+use BookingApp\Controllers\ListBookingsController;
 use Silex\Application as SilexApplication;
 use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\FormServiceProvider;
@@ -86,6 +87,9 @@ class Application extends SilexApplication
             ))
             ->method('GET|POST')
         ;
+
+        $this
+            ->get('/bookings', new ListBookingsController($this['db'], $this['twig']))
+        ;
     }
 }
-
